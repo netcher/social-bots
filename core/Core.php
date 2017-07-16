@@ -202,7 +202,7 @@ class Core {
 	
 	
 	// USE 
-	//http://slava.co.ua/bots/core/Core.php?action=runSQL
+	////DOMAIN_NAME/core/Core.php?action=runSQL
 	function runSQL() {
 		$inConf = Config::getInstance();
 		$inDB = DataBase::getInstance();
@@ -423,14 +423,15 @@ class Core {
 	
 	
 	function auth($state, $code) {
+		$inConf = Config::getInstance();
 	
-		 $plugin = (self::getPlugin('facebook'));
-		 $plugin = json_decode($plugin['settings'], true);
+		$plugin = (self::getPlugin('facebook'));
+		$plugin = json_decode($plugin['settings'], true);
 		header("Location: ". "https://graph.facebook.com/oauth/access_token?
-    client_id=".$plugin['app_id']."
-   &redirect_uri=http://slava.co.ua/bots/hack.html
-   &client_secret=".$plugin['app_key']."
-   &code=$code");
+                client_id=".$plugin['app_id']."
+               &redirect_uri=".$inConf->site_url."/hack.html
+               &client_secret=".$plugin['app_key']."
+               &code=$code");
 	}
 	
 	function checkAuth() {

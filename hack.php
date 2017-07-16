@@ -49,6 +49,6 @@ echo ('<!DOCTYPE html>
 </html>
 ');
 } else {
-	header('Location: http://slava.co.ua/bots/');
+	header('Location: /');
 }
 ?>

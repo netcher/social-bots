@@ -28,13 +28,13 @@ if ($pass!="") {
 		);
 		
 		$result = $inDB->query($query, $values, 256);
-		setcookie("hash", $hash_time, time() + 60*60*3, '/', '.slava.co.ua');
-		header('Location: http://slava.co.ua/bots/hack.php');
+		setcookie("hash", $hash_time, time() + 60*60*3, '/', '.'.$inConf->domain);
+		header('Location: /hack.php');
 	} else {
-		header('Location: http://slava.co.ua/bots/');
+		header('Location: /');
 	}
 } else
-		header('Location: http://slava.co.ua/bots/');
+		header('Location: /');
 
 
 ?>

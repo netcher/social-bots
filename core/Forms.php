@@ -5,7 +5,7 @@ require_once "Core.php";
 if (Core::checkAuth())
 	echo Forms::getForm($_POST['form_name'], json_decode($_POST['params'], true));
 else 
-	header('Location: http://slava.co.ua/bots/');
+	header('Location: /');
 
 class Forms {
 

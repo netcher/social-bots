@@ -1,6 +1,7 @@
 <?php
 
-require_once "/home/designwe/slava.co.ua/www/bots/includes/minicurl.class.php";
+require_once  '../../core/Config.php';
+require_once '../../includes/minicurl.class.php';
 
 class joomlaPlugin {
 
@@ -21,7 +22,7 @@ class joomlaPlugin {
 		
 		$article['description'] =  substr($message["text"], 0, $posSpace) . '...';
 		$article['content'] =  $message["text"];
-		$article['imgSrc'] =  'http://slava.co.ua/bots/images/temporary/'.$message["imgSrc"];
+		$article['imgSrc'] =  $inConf->site_url.'/images/temporary/'.$message["imgSrc"];
 		
 		$params['article'] = $article;
 		$params['category'] = 5;

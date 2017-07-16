@@ -1,6 +1,6 @@
 <?php
 define('PATH', $_SERVER['DOCUMENT_ROOT']);
-require_once "/home/designwe/slava.co.ua/www/bots/core/Core.php";
+require_once "../core/Core.php";
 
 Core::runBot(13);
 Core::runBot(12);

@@ -1,6 +1,8 @@
 ﻿<?php
 
     require  '../../core/Config.php';
+	$inConf = Config::getInstance();
+	$pluginUrl = $inConf->site_url.'/plugins/vkontakte/connect.php&response_type=code&scope=friends,photos,groups,wall,offline';
 
     if (!empty($_GET['code'])){
 
@@ -17,7 +19,7 @@
         fputs($fp, $oResponce->access_token);
         fclose($fp);
         echo $oResponce->access_token.'<br>';
-}
+    }
 
+    echo '<a href="http://api.vk.com/oauth/authorize?client_id=3040519&scope=offline,wall&redirect_uri='.$pluginUrl.'">Авторизация Вконтакте</a>';
 ?>
-<a href="http://api.vk.com/oauth/authorize?client_id=3040519&scope=offline,wall&redirect_uri=http://www.slava.co.ua/bots/plugins/vkontakte/connect.php&response_type=code&scope=friends,photos,groups,wall,offline">Авторизация Вконтакте</a>

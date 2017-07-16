@@ -5,7 +5,7 @@ class Config {
 
     private function __construct(){
         
-        $cfg_file = '/home/designwe/slava.co.ua/www/bots/includes/config.inc.php';
+        $cfg_file = '../includes/config.inc.php';
 
         if (file_exists($cfg_file)){
         
