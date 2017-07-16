@@ -5,7 +5,7 @@ class Config {
 
     private function __construct(){
         
-        $cfg_file = '../includes/config.inc.php';
+        $cfg_file = dirname(__FILE__) . '/../includes/config.inc.php';
 
         if (file_exists($cfg_file)){
         

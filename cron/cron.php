@@ -1,6 +1,6 @@
 <?php
 define('PATH', $_SERVER['DOCUMENT_ROOT']);
-require_once "../core/Core.php";
+require_once dirname(__FILE__) . '/../core/Core.php';
 
 Core::runBot(13);
 Core::runBot(12);
