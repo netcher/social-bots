@@ -12,5 +12,5 @@ pipelines:
           script:
             - apt-get update
             - apt-get -qq install git-ftp
-            - git ftp init -u $FTP_USERNAME --passwd $FTP_PASSWORD ftp://designwe.ftp.ukraine.com.ua$FTP_PATH
-#            - git ftp push -u $FTP_USERNAME --passwd $FTP_PASSWORD ftp://designwe.ftp.ukraine.com.ua$FTP_PATH
+#            - git ftp init -u $FTP_USERNAME --passwd $FTP_PASSWORD ftp://designwe.ftp.ukraine.com.ua$FTP_PATH
+            - git ftp push -u $FTP_USERNAME --passwd $FTP_PASSWORD ftp://designwe.ftp.ukraine.com.ua$FTP_PATH
