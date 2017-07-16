@@ -1,0 +1,374 @@
+
+/*---- Genral classes end -------*/
+
+/*Change icons size here*/
+.social-icons .fa {
+	font-size: 1.8em;
+}
+/*Change icons circle size and color here*/
+.social-icons .fa {
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	color: #FFF;
+	color: rgba(255, 255, 255, 0.8);
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+
+.social-icons.icon-circle .fa{ 
+	border-radius: 50%;
+}
+.social-icons.icon-rounded .fa{
+	border-radius:5px;
+}
+.social-icons.icon-flat .fa{
+	border-radius: 0;
+}
+
+.social-icons .fa:hover, .social-icons .fa:active {
+	color: #FFF;
+	-webkit-box-shadow: 1px 1px 3px #333;
+	-moz-box-shadow: 1px 1px 3px #333;
+	box-shadow: 1px 1px 3px #333; 
+}
+.social-icons.icon-zoom .fa:hover, .social-icons.icon-zoom .fa:active { 
+ 	-webkit-transform: scale(1.1);
+	-moz-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	-o-transform: scale(1.1);
+	transform: scale(1.1); 
+}
+.social-icons.icon-rotate .fa:hover, .social-icons.icon-rotate .fa:active { 
+	-webkit-transform: scale(1.1) rotate(360deg);
+	-moz-transform: scale(1.1) rotate(360deg);
+	-ms-transform: scale(1.1) rotate(360deg);
+	-o-transform: scale(1.1) rotate(360deg);
+	transform: scale(1.1) rotate(360deg);
+}
+ 
+.social-icons .fa-adn{background-color:#504e54;} 
+.social-icons .fa-apple{background-color:#aeb5c5;} 
+.social-icons .fa-android{background-color:#A5C63B;}  
+.social-icons .fa-bitbucket,.social-icons .fa-bitbucket-square{background-color:#003366;} 
+.social-icons .fa-bitcoin,.social-icons .fa-btc{background-color:#F7931A;} 
+.social-icons .fa-css3{background-color:#1572B7;} 
+.social-icons .fa-dribbble{background-color:#F46899;}  
+.social-icons .fa-dropbox{background-color:#018BD3;}
+.social-icons .fa-facebook,.social-icons .fa-facebook-square{background-color:#3C599F;}  
+.social-icons .fa-flickr{background-color:#FF0084;}
+.social-icons .fa-foursquare{background-color:#0086BE;}
+.social-icons .fa-github,.social-icons .fa-github-alt,.social-icons .fa-github-square{background-color:#070709;} 
+.social-icons .fa-google-plus,.social-icons .fa-google-plus-square{background-color:#CF3D2E;} 
+.social-icons .fa-html5{background-color:#E54D26;}
+.social-icons .fa-instagram{background-color:#A1755C;}
+.social-icons .fa-linkedin,.social-icons .fa-linkedin-square{background-color:#0085AE;} 
+.social-icons .fa-linux{background-color:#FBC002;color:#333;}
+.social-icons .fa-maxcdn{background-color:#F6AE1C;}
+.social-icons .fa-pagelines{background-color:#241E20;color:#3984EA;}
+.social-icons .fa-pinterest,.social-icons .fa-pinterest-square{background-color:#CC2127;} 
+.social-icons .fa-renren{background-color:#025DAC;}
+.social-icons .fa-skype{background-color:#01AEF2;}
+.social-icons .fa-stack-exchange{background-color:#245590;}
+.social-icons .fa-stack-overflow{background-color:#FF7300;}
+.social-icons .fa-trello{background-color:#265A7F;}
+.social-icons .fa-tumblr,.social-icons .fa-tumblr-square{background-color:#314E6C;} 
+.social-icons .fa-twitter,.social-icons .fa-twitter-square{background-color:#32CCFE;} 
+.social-icons .fa-vimeo-square{background-color:#229ACC;}
+.social-icons .fa-vk{background-color:#375474;}
+.social-icons .fa-weibo{background-color:#D72B2B;}
+.social-icons .fa-windows{background-color:#12B6F3;}
+.social-icons .fa-xing,.social-icons .fa-xing-square{background-color:#00555C;} 
+.social-icons .fa-youtube,.social-icons .fa-youtube-play,.social-icons .fa-youtube-square{background-color:#C52F30;}
+ 
+
+body {
+    display: flex;
+    background: #ddd;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.lsd-title {
+    position: absolute;
+    font-size: 80px;
+    margin: 0;
+    color: #999;
+    font-family: fantasy;
+    animation: title 2s;
+}
+
+.lsd-title_sub {
+    font-size: 79px;
+    animation: titlesub 2s;
+}
+
+.lsd-form {
+    position: relative;
+    z-index: 1;
+    margin-top: 100px;
+}
+
+.lsd-form .lsd-btn {
+    display: block;
+}
+
+.lsd-form .lsd-btn-submit {
+    width: 50%;
+    height: 35px;
+    font-size: 14px;
+    margin: 20px auto;
+}
+
+@keyframes title {
+    33% {
+        transform: skewX(5deg) translateX(5px)
+    }
+    66% {
+        transform: skewX(-5deg) translateX(-5px)
+    }
+    100% {
+        transform: skewX(0deg) translateX(0px)
+    }
+}
+
+@keyframes titlesub {
+    33% {
+        color: red;
+        transform: skewX(5deg) translateX(5px);
+    }
+    66% {
+        color: blue;
+        transform: skewX(-5deg) translateX(-5px);
+    }
+    80% {
+        color: green;
+    }
+    100% {
+        transform: skewX(0deg) translateX(0px);
+    }
+}
+
+
+HTML, BODY {
+    height: 100%;
+}
+
+BODY {
+    background: #000;
+    background-size: .12em 100%;
+    font: 6em/1 Arial;
+}
+
+.text--line {
+    font-size: 1em;
+}
+.logo {
+    position: absolute;
+    font-size: 4em;
+    width: 100%;
+    height: 100px;
+    top: 20px;
+}
+.header {
+    position: absolute;
+    width: 100%;
+    height: 60%;
+    top: 0;
+}
+
+.text-copy {
+    fill: none;
+    stroke: white;
+    stroke-width: 3px;
+}
+.text-copy:nth-child(1) {
+    stroke: #360745;
+    animation: stroke-offset1 6s forwards cubic-bezier(0.55, 0.21, 0.18, 1);
+}
+.text-copy:nth-child(2) {
+    stroke: #D61C59;
+    animation: stroke-offset2 6s forwards cubic-bezier(0.55, 0.21, 0.18, 1);
+}
+.text-copy:nth-child(3) {
+    stroke: #E7D84B;
+    animation: stroke-offset3 6s forwards cubic-bezier(0.55, 0.21, 0.18, 1);
+}
+.text-copy:nth-child(4) {
+    stroke: #EFEAC5;
+    animation: stroke-offset4 6s forwards cubic-bezier(0.55, 0.21, 0.18, 1);
+}
+.text-copy:nth-child(5) {
+    stroke: #1B8798;
+    animation: stroke-offset5 6s forwards cubic-bezier(0.55, 0.21, 0.18, 1);
+}
+
+@keyframes stroke-offset1 {
+    0% {
+        stroke-dashoffset: 35%;
+        stroke-dasharray: 0 87.5%;
+    }
+
+    100% {
+        stroke-dashoffset: 14%;
+        stroke-dasharray: 7% 28%;
+    }
+}
+
+@keyframes stroke-offset2 {
+    0% {
+        stroke-dashoffset: 35%;
+        stroke-dasharray: 0 87.5%;
+    }
+
+    100% {
+        stroke-dashoffset: 7%;
+        stroke-dasharray: 7% 28%;
+    }
+}
+
+@keyframes stroke-offset3 {
+    0% {
+        stroke-dashoffset: 35%;
+        stroke-dasharray: 0 87.5%;
+    }
+
+    100% {
+        stroke-dashoffset: 21%;
+        stroke-dasharray: 7% 28%;
+    }
+}
+
+@keyframes stroke-offset4 {
+    0% {
+        stroke-dashoffset: 35%;
+        stroke-dasharray: 0 87.5%;
+    }
+
+    100% {
+        stroke-dashoffset: 28%;
+        stroke-dasharray: 7% 28%;
+    }
+}
+
+@keyframes stroke-offset5 {
+    0% {
+        stroke-dashoffset: 35%;
+        stroke-dasharray: 0 87.5%;
+    }
+
+    100% {
+        stroke-dashoffset: 35%;
+        stroke-dasharray: 7% 28%;
+    }
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-width: 1240px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+.fa {
+    display: inline-block;
+    filter: grayscale(100%);
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+.fa:hover {
+    filter: grayscale(0);
+}
+
+.social-icons {
+    display: flex;
+    font-size: 16px;
+    opacity: .4;
+    transition: opacity .5s;
+    width: 50%;
+    padding: 30px 40px;
+    background: transparent;
+    height: 50px;
+}
+
+.social-icons:hover {
+    opacity: .8;
+}
+
+.contacts {
+    position: relative;
+    display: block;
+    color: #ccc;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-align: right;
+    width: 50%;
+    padding: 0 40px;
+}
+
+.contacts-title {
+    color: #444;
+    opacity: 1;
+    cursor: pointer;
+    padding: 25px;
+}
+
+.contacts-list {
+    display: none;
+    position: absolute;
+    /* opacity: 0; */
+    bottom: 40px;
+    right: 40px;
+    background: rgba(255, 255, 255, .05);
+    padding: 10px 20px;
+    opacity: 0;
+    transition: opacity .4s;
+    color: #666;
+    font-size: 12px;
+}
+
+.contacts-list li {
+    padding: 8px 0;
+}
+
+.contacts:hover .contacts-title {
+    background: rgba(255, 255, 255, .05);
+}
+
+.contacts:hover .contacts-list {
+    display: block;
+    opacity: 1;
+}
+
+.contacts-list-href {
+    color: #ccc;
+    text-transform: lowercase;
+}
+
+.copyright {
+    position: absolute;
+    bottom: 10px;
+    right: 60px;
+    color: white;
+    opacity: .2;
+    font-size: 10px;
+}
