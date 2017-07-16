@@ -50,7 +50,7 @@ class Forms {
 					  
 				 
 					  <!-- Be sure to leave the brand out there if you want it shown -->
-					  <a class="brand" href="#">Honey bots</a>
+					  <a class="brand" href="#">Social bots</a>
 				 
 					  <!-- Everything you want hidden at 940px or less, place within here -->
 					  <div class="nav-collapse">

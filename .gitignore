@@ -1,3 +1,4 @@
 images/**/*.*
 !.empty
 .idea
+node_modules
