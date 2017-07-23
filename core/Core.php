@@ -191,7 +191,7 @@ class Core {
 		$bot = self::getBot($bot_id);
 		$bot_group = $bot['group'];
 		$bot_type = $bot['type'];
-		$query = "SELECT * FROM `".$inConf->db_prefix."_news` WHERE `date` <= CURRENT_DATE() AND `group` = :group AND `".$bot_type."` = 0";
+		$query = "SELECT * FROM `".$inConf->db_prefix."_news` WHERE `date` <= CURRENT_DATE() AND `group` = :group AND `".$bot_type."` = 0 AND (`text` != '' OR `imgSrc` != '')";
 		$values = array(
 			":group" => $bot_group
 		);
@@ -323,11 +323,11 @@ class Core {
 		return $plugins_to_use;
 	}
 
-	function getNewsList($group, $plugins_to_use) {
+	function getNewsList($group, $plugins_to_use, $limit = 300) {
 		$inConf = Config::getInstance();
 		$inDB = DataBase::getInstance();
 		$values[':group'] = $group;
-		
+
 		$query = "SELECT * FROM `".$inConf->db_prefix."_news` WHERE `group` = :group AND ((";
 		foreach($plugins_to_use as $plugin) {
 			$plugin_type = $plugin['type'];
@@ -335,7 +335,7 @@ class Core {
 			$query = $query . '`' . $plugin_type . '` = 0 OR ';
 			$subQuery = $subQuery . " OR `".$plugin_type."` = :".$plugin_type;
 		}
-		$query = substr($query, 0, strlen($query)-4) . ')' . $subQuery . ") ORDER BY `date` ASC";
+		$query = substr($query, 0, strlen($query)-4) . ')' . $subQuery . ") ORDER BY `date` ASC LIMIT ".$limit;
 		$result = $inDB->query($query, $values, 64);
 		
 		return $inDB->fetchAll($result);

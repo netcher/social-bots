@@ -2,3 +2,4 @@ images/**/*.*
 !.empty
 .idea
 node_modules
+desktop.ini
