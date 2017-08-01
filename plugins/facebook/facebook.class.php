@@ -1,6 +1,5 @@
 <?php
 require __DIR__ . '/../../vendor/autoload.php';
-require_once('facebook.php');
 
 use Facebook\FacebookRequest;
 use Facebook\GraphObject;

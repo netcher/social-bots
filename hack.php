@@ -40,7 +40,7 @@ echo ('<!DOCTYPE html>
   </div>
 </div>
 
-<script src="page_scripts.js"></script>
+<script src="assets/page_scripts.js"></script>
 <script src="bootstrap/js/jquery-1.7.2.js"></script>
 <script src="bootstrap/js/bootstrap.js"></script>
 <script src="bootstrap/js/bootstrap-datepicker.js"></script>

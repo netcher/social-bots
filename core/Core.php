@@ -87,30 +87,34 @@ class Core {
 		return $inDB->fetchRow($result);
 	}
 	
-	function appendNode($group, $nodeText, $nodeImgSrc, $nodeDate) {
+	function appendNode($group, $nodeTitle, $nodeText, $nodeImgSrc, $nodeDate) {
 		$timestamp = strtotime($nodeDate);
 		$nodeDate = date("Y-m-d", $timestamp);
 		
 		$inConf = Config::getInstance();
 		$inDB = DataBase::getInstance();
 		
+		$nodeTitle = iconv( "UTF-8", "CP1251//IGNORE", $nodeTitle);
 		$nodeText = iconv( "UTF-8", "CP1251//IGNORE", $nodeText);
+		$nodeTextHash = iconv( "UTF-8", "CP1251//IGNORE", md5($nodeText));
 		if(@GetImageSize($nodeImgSrc)){
 			$nodeImgSrc = self::savePhotoToServer($nodeImgSrc);
 		} else {
 			$nodeImgSrc = "";
 		}
 		
-		$query = "INSERT INTO `".$inConf->db_prefix."_news` (`group`, `text`, `imgSrc`, `date`) VALUES (:group, :text, :imgSrc, :date)";
+		$query = "INSERT INTO `".$inConf->db_prefix."_news` (`group`, `title`, `text`, `textHash`, `imgSrc`, `date`) VALUES (:group, :title, :text, :textHash, :imgSrc, :date) ON DUPLICATE KEY UPDATE `textHash` = :textHash;";
 		$values = array(
+			":title" => $nodeTitle,
 			":text" => $nodeText,
+			":textHash" => $nodeTextHash,
 			":imgSrc" => $nodeImgSrc,
 			":date" => $nodeDate,
 			":group" => $group
 		);
 		
 		$result = $inDB->query($query, $values, 8192);
-	
+
 		if ($result) {
 			return array( "status" => ResultCode::Success, "header" => 'New article', 'message' => 'Article appended!');
 		} else {
@@ -161,7 +165,7 @@ class Core {
 			":nodeId" => $nodeId
 		);
 		$result = $inDB->query($query, $values, 64);
-		
+
 		if ($result) {
 			return array( "status" => ResultCode::Success, "header" => 'Article '.$nodeId, 'message' => 'State changed to '.(int)$nodeState);
 		} else {
