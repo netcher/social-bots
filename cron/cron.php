@@ -14,7 +14,9 @@ require_once dirname(__FILE__) . '/../core/Core.php';
 //Core::runBot(4);
 //Core::runBot(5);
 //Core::runBot(6);
+Core::runBot(4);
 Core::runBot(3);
+Core::runBot(14);
 Core::runBot(16);
 Core::runBot(17);
 ?>
