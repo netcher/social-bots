@@ -33,7 +33,7 @@ class Core {
 				$nodeText = $params['nodeText'];
 				$nodeImgSrc = $params['nodeImgSrc'];
 				$nodeDate = $params['nodeDate'];
-				return Core::editNode($nodeId, '', $nodeText, $nodeImgSrc, $nodeDate);
+				return Core::editNode($nodeId, $nodeText, $nodeImgSrc, $nodeDate);
 				break;
 			case 'setNodeState':
 				$nodeId = $params['nodeId'];
